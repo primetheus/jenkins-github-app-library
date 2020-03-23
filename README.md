@@ -70,3 +70,20 @@ pipeline {
     }
 }
 ```
+
+## Getting your own token
+If you use the [`GitHub Authenticatio`](https://plugins.jenkins.io/github-oauth/) plugin along with this library you can get a temporary Personal Access Token for yourself.
+
+#### Print the username for the build (yours)
+```groovy
+@Library('primetheus-gitub-app')
+
+echo getBuildUser()
+```
+
+#### Print your GitHub token for this build session
+```groovy
+@Library('primetheus-github-app')
+
+echo getAccessToken()
+```
