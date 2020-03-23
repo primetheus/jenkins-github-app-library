@@ -24,6 +24,10 @@ If running this as a shared pipeline you may have to enable permissions to `Allo
 
 #### Sample Pipeline
 ```groovy
+// this library is implicitly loaded
+// To load explicitly ensure you configure
+// the library and add the following:
+// @Library('primetheus-github-app')
 import com.cloudbees.plugins.credentials.impl.*;
 import com.cloudbees.plugins.credentials.*;
 import com.cloudbees.plugins.credentials.domains.*;
