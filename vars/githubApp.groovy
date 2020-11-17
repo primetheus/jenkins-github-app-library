@@ -79,7 +79,7 @@ def getInstallationToken(String access_tokens_url, String credential = 'jenkins-
   return token
 }
 
-def getApp(String githubHost = 'api.github.com') {
+def getApp(String githubHost = 'api.github.com', String credential = 'jenkins-bot') {
   /**
    * Return information about the authenticated app
    *
@@ -90,7 +90,7 @@ def getApp(String githubHost = 'api.github.com') {
    * @link https://developer.github.com/v3/apps/#get-the-authenticated-github-app
    * @return the GitHub App info
    */
-  JwtToken = getJwt()
+  JwtToken = getJwt(credential)
   githubUrl = (githubHost == 'api.github.com') ? "https://${githubHost}/app" : "https://${githubHost}/api/v3/app"
   response = httpRequest(
     customHeaders: [
@@ -104,7 +104,7 @@ def getApp(String githubHost = 'api.github.com') {
   return app
 }
 
-def getInstallations(String githubHost = 'api.github.com') {
+def getInstallations(String githubHost = 'api.github.com', String credential = 'jenkins-bot') {
   /**
    * Get a list of installations for this GitHub App
    *
@@ -114,7 +114,7 @@ def getInstallations(String githubHost = 'api.github.com') {
    * @link https://developer.github.com/v3/apps/#list-installations
    * @return the installation data for this GitHub App
    */
-  JwtToken = getJwt()
+  JwtToken = getJwt(credential)
   githubUrl = (githubHost == 'api.github.com') ? "https://${githubHost}/app/installations" : "https://${githubHost}/api/v3/app/installations" 
   response = httpRequest(
     customHeaders: [
