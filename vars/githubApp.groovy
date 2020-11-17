@@ -54,7 +54,7 @@ def getJwt(String credential = 'jenkins-bot') {
   }
 }
 
-def getInstallationToken(String access_tokens_url) {
+def getInstallationToken(String access_tokens_url, String credential = 'jenkins-bot') {
   /**
    * Returns an Installation Token for use with GitHub Apps
    *
@@ -65,7 +65,7 @@ def getInstallationToken(String access_tokens_url) {
    * @param installationId the installation ID for this GitHub App
    * @return the OAuth token for a given GitHub App installation
    */
-  JwtToken = getJwt()
+  JwtToken = getJwt(credential)
   response = httpRequest(
     customHeaders: [
       [maskValue: false, name: 'Authorization', value: 'Bearer ' + JwtToken], 
