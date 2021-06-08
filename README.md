@@ -10,17 +10,7 @@ This example creates a new `Credential` called `jenkins-auto-bot` and then authe
 - Git
 
 #### Script Permissions
-If running this as a shared pipeline you may have to enable permissions to `Allow In-Process Script Approval`. These permissions are required when using shared libraries as the pipelines are executed in `sandbox` mode. You can add the functions directly to a pipeline file to avoid this.
-- `method com.cloudbees.plugins.credentials.CredentialsStore addCredentials com.cloudbees.plugins.credentials.domains.Domain com.cloudbees.plugins.credentials.Credentials`
-- `method com.cloudbees.plugins.credentials.SystemCredentialsProvider getStore`
-- `method java.lang.String getBytes`
-- `new com.cloudbees.plugins.credentials.impl.UsernamePasswordCredentialsImpl com.cloudbees.plugins.credentials.CredentialsScope java.lang.String java.lang.String java.lang.String java.lang.String`
-- `new java.lang.String byte[]`
-- `staticField com.cloudbees.plugins.credentials.CredentialsScope GLOBAL`
-- `staticMethod com.cloudbees.plugins.credentials.SystemCredentialsProvider getInstance`
-- `staticMethod com.cloudbees.plugins.credentials.domains.Domain global`
-- `staticMethod org.apache.commons.codec.binary.Base64 encodeBase64 byte[]`
-- `staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods print groovy.lang.Closure java.lang.Object`
+This library must be run in trusted mode, meaning it must be enabled globally, not on a per-folder basis.
 
 #### Sample Pipeline
 ```groovy
