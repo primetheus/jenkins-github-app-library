@@ -12,7 +12,7 @@ This example creates a new `Credential` called `jenkins-auto-bot` and then authe
 #### Script Permissions
 This library should be run in trusted mode, meaning it must be enabled globally, not on a per-folder basis.
 
-<details>
+<details><summary>Running in `sandbox` mode</summary>
 
 If running this as a shared pipeline (per folder) you may have to enable permissions to `Allow In-Process Script Approval`. These permissions are required when using shared libraries as the pipelines are executed in `sandbox` mode. You can add the functions directly to a pipeline file to avoid this.
 - `method com.cloudbees.plugins.credentials.CredentialsStore addCredentials com.cloudbees.plugins.credentials.domains.Domain com.cloudbees.plugins.credentials.Credentials`
