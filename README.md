@@ -1,6 +1,8 @@
 # Jenkins Shared Library: GitHub App
 This library allows Jenkins pipelines to authenticate as a GitHub App. 
 
+## ⚠️ This library is no longer necessary since the release of the official plugin
+
 ## Getting Started
 This example creates a new `Credential` called `jenkins-auto-bot` and then authenticates the rest of the pipline using this credential.  The plugins required for this sample are:
 
